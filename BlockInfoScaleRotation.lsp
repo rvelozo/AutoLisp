@@ -2,14 +2,14 @@
 (defun LB ( / b tp SC)
   (setq SC nil)
   (while (/= tp "INSERT")
-    (setq b (entsel "\nSelecione o bloco: "))
+    (setq b (entsel "\nSelect block: "))
     (setq tp (cdr (assoc 0 (entget (car b)))))
   )
   (while b
     (if b
       (progn
-        (prompt (strcat "\n Bloco: " (cdr (assoc 2 (entget (car b))))))
-	(setq sc (strcat "    Escala: " (rtos 
+        (prompt (strcat "\n Block name: " (cdr (assoc 2 (entget (car b))))))
+	(setq sc (strcat "    Scale: " (rtos 
                                           (cdr 
                                             (assoc 41 
                                               (entget 
@@ -22,9 +22,9 @@
         )
         (prompt sc)
       )
-      (prompt "Nenhum bloco foi selecionado.")
+      (prompt "No block selected.")
     )
-    (setq b (entsel "\nSelecione o bloco: "))
+    (setq b (entsel "\nSelect block "))
   )
   (princ)
 )
