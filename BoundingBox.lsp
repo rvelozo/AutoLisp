@@ -1,4 +1,3 @@
-```
 (defun LM:SSBoundingBox ( ss / bb )
   (vl-load-com)
   ;; © Lee Mac 2010
@@ -61,4 +60,3 @@
 
   (princ)
 )
-```
